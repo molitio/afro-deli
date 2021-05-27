@@ -25,7 +25,7 @@ export function FooterComponent(): JSX.Element {
     return (
         <div className={componentStyle.footer}>
             <div className={componentStyle.brand}>
-                <Typography variant="body2">Aurum Sophia Alapítvány 2021</Typography>
+                <Typography variant="body2">Afro Deli and coffee 2021</Typography>
             </div>
         </div>
     );

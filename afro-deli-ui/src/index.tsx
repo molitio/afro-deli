@@ -4,6 +4,7 @@ import './styles/index.scss';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter as Router } from 'react-router-dom';
+export * from './public-api';
 
 ReactDOM.render(
     <React.StrictMode>

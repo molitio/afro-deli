@@ -11,13 +11,13 @@ import {
     CardActions,
     Button,
 } from '@material-ui/core';
-import treeShape from '../../images/treeShape.svg';
+import { MenuItem } from './interface/MenuItem';
 
-export function ContactComponent(): JSX.Element {
+export function MenuItemComponent({ data }: MenuItem): JSX.Element {
     const theme = useTheme();
     const useStyles = makeStyles(() =>
         createStyles({
-            root: {
+            menuListItem: {
                 color: theme.palette.text.primary,
                 margin: '10px',
                 border: 0,
@@ -64,37 +64,33 @@ export function ContactComponent(): JSX.Element {
     const componentStyle = useStyles();
 
     return (
-        <div className={componentStyle.root}>
-            <Card className={componentStyle.card}>
-                <CardActionArea>
-                    <div className={componentStyle.contentContainer}>
-                        <div className={componentStyle.cardMedia}>
-                            <CardMedia
-                                component="img"
-                                alt="Member Image"
-                                image={treeShape}
-                                title="Contemplative Reptile"
-                            />
-                        </div>
-                        <div className={componentStyle.cardContent}>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Member
-                                </Typography>
-                                <Typography variant="body2" className={componentStyle.cardInfo}>
-                                    Proin non bibendum ipsum. Sed vitae tristique metus, vel placerat turpis. Cras
-                                    gravida odio sit amet erat volutpat, nec vestibulum massa mollis.
-                                </Typography>
-                            </CardContent>
-                        </div>
+        <Card className={componentStyle.card}>
+            <CardActionArea>
+                <div className={componentStyle.contentContainer}>
+                    <div className={componentStyle.cardMedia}>
+                        <CardMedia component="img" alt={data.description} image={data.imageUrl} title={data.name} />
                     </div>
-                </CardActionArea>
-                <CardActions>
-                    <Button size="small" className={componentStyle.cardButton}>
-                        Bövebben...
-                    </Button>
-                </CardActions>
-            </Card>
-        </div>
+                    <div className={componentStyle.cardContent}>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {data.name}
+                            </Typography>
+                            <Typography variant="body2" className={componentStyle.cardInfo}>
+                                {data.description}
+                            </Typography>
+                            <Typography variant="body1">
+                                {data.price}
+                                {data.currency}
+                            </Typography>
+                        </CardContent>
+                    </div>
+                </div>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" className={componentStyle.cardButton}>
+                    share in FB
+                </Button>
+            </CardActions>
+        </Card>
     );
 }

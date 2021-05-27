@@ -58,8 +58,8 @@ export function TitleComponent({ horizontal }: TitleComponentProps): JSX.Element
                 <RouterLink to="/">
                     <div className={componentStyle.titleText}>
                         <Typography variant="h5" component="h1">
-                            Aurum Sophia {!horizontal && <br />}
-                            Alapítvány
+                            Afro Deli {!horizontal && <br />}
+                            and coffee
                         </Typography>
                     </div>
                 </RouterLink>

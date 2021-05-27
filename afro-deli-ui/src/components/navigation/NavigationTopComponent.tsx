@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, createStyles, Fade, makeStyles, useTheme } from '@material-ui/core';
+import { Collapse, createStyles, makeStyles, useTheme } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';

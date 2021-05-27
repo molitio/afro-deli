@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTheme, makeStyles, createStyles } from '@material-ui/core';
+import { MenuItem } from '../components/menu/interface/MenuItem';
+import { MenuComponent } from '../components/menu/MenuComponent';
+import { useEffect } from 'react';
+import { MenuPageDataCollection } from '../components/menu/interface/MenuPageDataCollection';
+import { menuPageCollection } from '../services/menuPageService';
 
 export function LandingPage(): JSX.Element {
     const theme = useTheme();
@@ -35,9 +40,13 @@ export function LandingPage(): JSX.Element {
     );
 
     const pageStyle = useStyles();
+    const [pageCollection, setItemList] = useState<MenuPageDataCollection>(menuPageCollection);
+
     return (
         <div className={pageStyle.landing}>
-            <div className={pageStyle.pageContent}>Landing page</div>
+            <div className={pageStyle.pageContent}>
+                <MenuComponent items={pageCollection.items} />
+            </div>
         </div>
     );
 }
