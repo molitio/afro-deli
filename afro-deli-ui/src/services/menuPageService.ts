@@ -1,8 +1,12 @@
 import { MenuPageData } from '../components/menu/interface/MenuPage';
 import { MenuPageDataCollection } from '../components/menu/interface/MenuPageDataCollection';
 import greenHand from '../images/greenHand.jpg';
+import pagesData from '../data/pagesData.json';
 
 const imageUrlTest = greenHand;
+
+const dataSourceMock = pagesData.data;
+console.log(dataSourceMock);
 
 export const menuPageCollection: MenuPageDataCollection = {
     items: {
