@@ -1,16 +1,16 @@
-import { MenuPageData } from '../components/menu/interface/MenuPage';
-import { MenuPageDataCollection } from '../components/menu/interface/MenuPageDataCollection';
+import { MenuPageData } from '@molitio/ui-core';
+import { MenuPageDataCollection } from '@molitio/ui-core';
 import greenHand from '../images/greenHand.jpg';
 import pagesData from '../data/pagesData.json';
 
 const imageUrlTest = greenHand;
 
-const dataSourceMock = pagesData.data;
+const dataSourceMock = new Map<string, MenuPageData>(JSON.parse(pagesData));
 console.log(dataSourceMock);
 
-export const menuPageCollection: MenuPageDataCollection = {
-    items: {
-        selectedPage: 'mealPage1',
+/* selectedPage: 'mealPage1', */
+export const menuPageCollection: () => MenuPageDataCollection = (): MenuPageDataCollection => {
+    return {
         menuPages: new Map<string, MenuPageData>([
             [
                 'mealPage1',
@@ -69,5 +69,5 @@ export const menuPageCollection: MenuPageDataCollection = {
                 },
             ],
         ]),
-    },
+    };
 };
